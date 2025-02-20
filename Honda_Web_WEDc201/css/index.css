@@ -1,0 +1,234 @@
+body {
+  /* overflow: hidden; */
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: end;
+}
+
+.header-title {
+  display: grid;
+  color: red;
+  font-style: italic;
+  justify-content: center;
+}
+
+.header-logo {
+  display: grid;
+  justify-content: center;
+  margin: 20px 0 10px 0;
+}
+
+.header-logo img {
+  height: 130px;
+  width: 162px;
+}
+
+.header-search {
+  margin-right: 15px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #0ec0c3;
+  height: 50px;
+}
+
+.menu li.active {
+  background-color: orange;
+}
+
+.airblade h2 {
+  display: flex;
+  justify-content: center;
+  color: #0ec0c3;
+}
+
+.airblade {
+  display: grid; /* Sử dụng grid */
+  grid-template-columns: 1fr; /* Sử dụng 1 cột */
+  align-items: center; /* Căn giữa các phần tử */
+  justify-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.airblade-main {
+  display: flex;
+  flex-direction: column; /* Hiển thị theo chiều dọc */
+  align-items: center; /* Căn giữa */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  margin: 10px;
+}
+
+.airblade-main img {
+  height: 733px;
+  width: auto; /* Để duy trì tỷ lệ khung hình */
+  margin: 10px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.airblade-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.airblade-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.airblade-info #cot1 {
+  display: grid;
+  justify-content: center;
+}
+
+.airblade-info #cot2 {
+  display: grid;
+  justify-content: center;
+}
+
+.airblade-info img {
+  height: 231px;
+  width: auto;
+  margin: 10px 0;
+}
+
+.best-seller h1 {
+  display: flex;
+  justify-content: center;
+  color: #0ec0c3;
+  margin-top: 20px;
+}
+
+.best-seller-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+}
+
+.best-seller-info #cot1,
+.best-seller-info #cot2,
+.best-seller-info #cot3 {
+  display: grid;
+  justify-content: center;
+}
+
+.best-seller-info img {
+  height: 480px;
+  width: 417px;
+}
+
+.best-seller-info h3 {
+  display: flex;
+  justify-content: center;
+  color: orange;
+}
+
+.best-seller-info p {
+  display: flex;
+  justify-content: center;
+}
+
+.store-customer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.info-title {
+  display: flex;
+  justify-content: center;
+  color: #0ec0c3;
+}
+
+#cottrai,
+#cotphai {
+  display: grid;
+  justify-content: center;
+}
+
+.footer {
+  background-color: #0ec0c3;
+  padding: 10px 0;
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 426px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Sử dụng 1 cột */
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-logo img {
+    height: 100px;
+    width: auto; /* Để duy trì tỷ lệ khung hình */
+  }
+
+  .airblade {
+    display: grid; /* Sử dụng grid */
+    grid-template-columns: repeat(1, 1fr); /* Sử dụng 1 cột */
+    align-items: center; /* Căn giữa */
+    justify-items: center; /* Căn giữa theo chiều ngang */
+  }
+
+  .airblade-main {
+    display: flex;
+    flex-direction: column; /* Hiển thị theo chiều dọc */
+    align-items: center; /* Căn giữa */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+  }
+
+  .airblade-main img {
+    height: 500px;
+    width: auto; /* Để duy trì tỷ lệ khung hình */
+    margin: 10px;
+  }
+
+  .airblade-info {
+    display: grid; /* Sử dụng grid */
+    grid-template-columns: repeat(1, 1fr); /* Sử dụng 1 cột */
+    align-items: center; /* Căn giữa */
+    justify-items: center; /* Căn giữa */
+  }
+
+  .airblade-info img {
+    height: 150px;
+    width: auto; /* Để duy trì tỷ lệ khung hình */
+    margin: 10px 0;
+  }
+
+  .best-seller-info {
+    display: flex;
+    flex-direction: column; /* Hiển thị theo chiều dọc */
+    align-items: center; /* Căn giữa */
+    margin: 0;
+  }
+
+  .best-seller-info img {
+    height: 300px;
+    width: auto; /* Để duy trì tỷ lệ khung hình */
+  }
+
+  .store-customer {
+    display: flex;
+    flex-direction: column; /* Hiển thị theo chiều dọc */
+    align-items: center; /* Căn giữa */
+  }
+
+  .footer {
+    background-color: #0ec0c3;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+  }
+}

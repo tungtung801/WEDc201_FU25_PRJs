@@ -1,0 +1,161 @@
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-title {
+  flex: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.header-title h3 {
+  color: red;
+  font-style: italic;
+}
+
+.header-logo {
+  flex: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.header-logo img {
+  width: 150px;
+  height: 110px;
+}
+
+.header-search {
+  flex: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 12px;
+}
+
+.header-search .form-group {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #0ec0c3;
+  height: 50px;
+
+  margin: 10px 0;
+}
+
+.menu ul li.active {
+  background-color: orange;
+}
+
+.airblade h2 {
+  text-align: center;
+  color: #14c6c9;
+}
+
+.airblade-img {
+  display: flex;
+  flex-direction: row;
+}
+
+.airblade-left,
+.airblade-right {
+  flex: 4;
+  display: flex;
+}
+
+.airblade-right #cot1,
+#cot2 {
+  flex: 2;
+}
+
+.airblade-right #cot1 img,
+#cot2 img {
+  width: 60%;
+  margin: 12px auto 12px 30px;
+}
+
+.best-seller {
+  margin-top: 3%;
+}
+
+.best-seller h1 {
+  text-align: center;
+  color: #0ec0c3;
+}
+
+.best-seller-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 8%;
+  margin-top: 2%;
+}
+
+.best-seller-info #xe1,
+#xe2,
+#xe3 {
+  flex: 3;
+  display: block;
+}
+
+.best-seller-info #xe1 img,
+#xe2 img,
+#xe3 img {
+  width: 363px;
+  height: 363px;
+  justify-content: center;
+}
+
+.infomation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+}
+
+.infomation h3 {
+  color: orange;
+}
+
+.store-customer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.store-customer #cottrai,
+#cotphai {
+  flex: 3;
+}
+
+.info-title {
+  text-align: center;
+  color: rgb(49, 182, 169);
+}
+
+#cottrai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cottrai img {
+  width: 55%;
+}
+
+.footer {
+  background-color: #0ec0c3;
+  height: 50%;
+}
+
+#footer-info {
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
