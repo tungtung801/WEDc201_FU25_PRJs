@@ -1,0 +1,277 @@
+body {
+    padding: 0 5px;
+    overflow-y: auto;
+    border: 2px solid rgb(81, 139, 206);
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    width: 120px;
+    height: 100px;
+}
+
+.content-box {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.content-box form {
+    display: flex;
+    width: 80%;
+    max-width: 700px;
+}
+
+.content-box input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid gray;
+    font-size: 16px;
+    min-width: 150px;
+    max-width: 100%;
+}
+
+.content-box button {
+    padding: 9px 6px;
+    border: none;
+    background-color: rgb(221, 133, 17);
+    color: white;
+    cursor: pointer;
+    margin-left: 3px;
+    font-size: 12px;
+}
+
+.menu {
+    text-align: center;
+    background-color: #fdeaea;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.menu ul li {
+    margin: 0 30px;
+    padding: 12px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 12px;
+}
+
+.menu ul li a:hover {
+    background-color: #ffd3d3;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-left {
+    flex: 3;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-left img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* background-repeat: no-repeat;
+    background-size: contain; */
+    min-width: 200px;
+}
+
+.main-right {
+    flex: 2;
+    margin-right: 20px;
+    background-color: #fdeaea;
+}
+
+.main-right h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.main-right form div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-right form div label {
+    width: 100px;
+}
+
+.main-right form div input {
+    padding: 8px 0;
+    width: 40%;
+}
+
+.main-right form div input[type="submit"] {
+    background-color: rgb(221, 133, 17);
+    color: white;
+    border: none;
+    border-radius: 13px;
+    width: auto;
+    min-width: 95px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.demo {
+    margin-right: 20px;
+}
+
+.demo h1 {
+    text-align: center;
+    color: rgb(221, 133, 17);
+}
+
+.demo-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.demo-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.demo-left img {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+}
+
+.demo-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-right-img {
+    display: flex;
+    justify-content: space-between;
+}
+
+.demo-right-img img {
+    max-width: 32%;
+    height: auto;
+}
+
+.demo-right-scipt p {
+    font-size: 20px;
+}
+
+.demo-right-scipt .bookBtn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px 60px;
+    width: fit-content;
+    border-radius: 14px;
+    background-color: rgb(221, 125, 35);
+    color: rgba(255, 255, 255, 0.856);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto 0;
+}
+
+/* LIST OF DISHES */
+
+.dishes {
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+.dishes h1 {
+    text-align: center;
+    color: rgb(221, 125, 35);
+    margin-bottom: 30px;
+}
+
+.firstRow, .secondRow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Allow wrapping when the screen is small */
+}
+
+.dish1, .dish2 {
+    flex: 1;
+    display: flex;
+    border: 2.5px solid #cfcaca;
+    margin-right: 12px;
+    margin-bottom: 20px;  /* Add margin-bottom for spacing between rows */
+}
+
+.dish1 img, .dish2 img {
+    flex: 1;
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    min-width: 45%;
+}
+
+.inside-dish1, .inside-dish2 {
+    flex: 2;
+    margin-left: 15px;
+    position: relative;
+}
+
+.inside-dish1 h3, .inside-dish2 h3 {
+    font-size: 22px;
+}
+
+.Btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(221, 125, 35);
+    padding: 18px 70px;
+    width: fit-content;
+    border-radius: 28px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);  /* Center the button horizontally */
+    cursor: pointer;
+}
+
+.secondRow {
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+    background-color: #fdeaea;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+
