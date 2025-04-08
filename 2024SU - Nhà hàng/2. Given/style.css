@@ -218,12 +218,12 @@ body {
 .firstRow, .secondRow {
     display: flex;
     justify-content: space-between;
-    min-height: 300px;
 }
 
 .dish1, .dish2 {
     flex: 1;
     display: flex;
+    min-height: 300px;
     border: 3px solid #cfcaca;
     border-style: groove;
     margin-right: 12px;
@@ -277,6 +277,167 @@ body {
     background-color: #fdeaea;
     padding: 15px 20px;
     text-align: center;
+}
+
+/* ...existing code... */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content-box {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0;
+    }
+
+    .content-box form {
+        width: 70%;
+    }
+
+    .content-box input {
+        max-width: 100%;
+
+    }
+
+    .content-box button {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-left {
+        margin: 0;
+        flex: 1;
+    }
+
+    .main-right {
+        margin: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-right form{
+        width: 70%;
+    }
+
+    .main-right form div{
+        width: 100%;
+    }
+
+    .main-left img {
+        width: 100%;
+    }
+
+    .demo {
+        margin-right: 0;
+    }
+    .demo-content {
+        flex-direction: column;;
+    }
+
+    .demo-left, .demo-right {
+        flex: 1;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .demo-right-img img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .demo-right-scipt p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .firstRow, .secondRow {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .dish1, .dish2 {
+        min-height: 275px;
+    }
+
+    .dish1 img, .dish2 img{
+        object-fit: cover;
+        max-width: 45%;
+        height: auto;
+        min-width: 40%;
+    }
+
+    .inside-dish1, .inside-dish2 {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .content-box input {
+        font-size: 14px;
+    }
+
+    .content-box button {
+        font-size: 10px;
+    }
+
+    .demo-right-scipt p{
+        font-size: 12px;
+    }
+
+    .dishes h1 {
+        font-size: 18px;
+    }
+
+    .inside-dish1 h3, .inside-dish2 h3 {
+        font-size: 18px;
+    }
+
+    .Btn {
+        display: flex;
+        padding: 12px 50px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .menu ul li {
+        margin: 5px 0;
+    }
+
+    .main-left img {
+        min-width: 100px;
+    }
+
+    .demo-right-scipt p {
+        font-size: 12px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
 }
 
 
