@@ -1,0 +1,136 @@
+:root {
+    --defaultOrange: #ED8116;
+    --defaultGreen: #0EC0C3;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.h-tittle h3 {
+    text-align: center;
+    font-style: italic;
+    color: red;
+}
+
+.h-logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 130px;
+        width: 200px;
+    }
+}
+
+.h-search {
+    max-width: 100%;
+    margin-right: 20px;
+}
+
+.lemenu {
+    display: flex;
+    justify-content: center;
+
+    .HomeFirst {
+        background-color: var(--defaultOrange);
+    }
+}
+
+.description {
+    padding: 20px 0;
+    h1 {
+        color: var(--defaultGreen);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    p {
+        text-align: justify;
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+}
+
+.left-col img{
+    height: 360px;
+    width: 490px;
+}
+
+.right-col img {
+    height: 437px;
+    width: 720px;
+}
+
+.bestseller {
+    margin: 40px 0;
+    h1 {
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--defaultGreen);
+    }
+
+    h3 {
+        color: var(--defaultOrange);
+    }
+
+    p {
+        text-align: justify;
+        font-size: 1.2em;
+    }
+}
+
+.order {
+    h1 {
+        color: var(--defaultGreen);
+        text-align: center;
+    }
+}
+
+.footer {
+    background-color: var(--defaultGreen);
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 768px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .h-logo img {
+        width: 100px;
+        height: 80px;
+        margin-bottom: 5px;
+    }
+
+    .h-search{
+        min-width: 100%;
+    }
+
+    .lemenu {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .left-col, .right-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+}
