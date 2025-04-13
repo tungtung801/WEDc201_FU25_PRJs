@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!--Icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--Embed text-family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Bungee+Spice&family=Monoton&display=swap"
+        rel="stylesheet">
+
+    <!--Embed CSS-->
+    <link rel="stylesheet" href="css/styleindex.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="sidebar">
+                <li><a onclick=hideSideBar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffe4c4"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html" id="index">Home</a></li>
+                <li><a href="menu.html" id="menu">Menu</a></li>
+                <li><a href="cart.html" id="cart">Menu</a></li>
+                <li><a href="account.html" id="account">Account</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="index.html">TN Fast Food</a></li>
+                <li class="hiddenOnMobile"><a href="index.html" id="index">Home</a></li>
+                <li class="hiddenOnMobile"><a href="menu.html" id="menu">Menu</a></li>
+                <li class="hiddenOnMobile"><a href="cart.html" id="cart">Cart</a></li>
+                <li class="hiddenOnMobile"><a href="account.html" id="account">Account</a></li>
+                <li><a onclick=showSideBar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffe4c4"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Banner area-->
+    <section id="storeBanner">
+        <div class="container-fluid">
+            <h4>TN Fast Food System</h4>
+            <img src="images/openingBanner16_9.PNG" alt="ads-banner">
+        </div>
+    </section>
+
+    <!--New burger area-->
+    <section id="newDishes">
+        <div class="container">
+            <h2>New Dishes</h2>
+
+            <div class="row d-flex row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/burgers/SpicyChickenBurger.png" class="card-img-top"
+                            alt="Spicy Chicken Burger">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div class="card-tittle">
+                                <h4><b>Spicy Chicken Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Get ready for a flavor adventure! Our Spicy Chicken Burger features a juicy,
+                                    spice-infused chicken fillet, fresh toppings, and a cool sauce, all in a soft bun.
+                                    It's
+                                    the perfect bite for those who love a little heat!
+                                </p>
+                            </div>
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: <del>$9.00</del> $8.25</h5>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/burgers/TropicalPineappleBurger.png" class="card-img-top"
+                            alt="Tropical Pineapple Burger">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div class="card-tittle">
+                                <h4><b>Tropical Pineapple Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Escape to the tropics with our Tropical Pineapple Burger! Juicy grilled patty, sweet
+                                    grilled pineapple, and a tangy glaze create a flavor paradise!
+                                </p>
+                            </div>
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: <del>$7.99</del> $6.99</h5>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/burgers/TheSmokyBBQBaconBurger.png" class="card-img-top"
+                            alt="SmokyBBQBaconBurger">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Smoky BBQ Bacon Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Sink your teeth into our Smoky BBQ Bacon Burger! A juicy beef patty topped with
+                                    crispy
+                                    bacon, melted cheddar, and a rich, smoky BBQ sauce. A classic done right!
+                                </p>
+                            </div>
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: <del>$9.50</del> $8.95</h5>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/burgers/Mushroom Swiss Burger.png" class="card-img-top"
+                            alt="Mushroom Swiss Burger">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Mushroom Swiss Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Indulge in the earthy flavors of our Mushroom Swiss Burger. A tender beef patty
+                                    smothered in sautéed mushrooms and creamy Swiss cheese. Pure comfort in every bite!
+                                </p>
+                            </div>
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: <del>$10.00</del> $8.95</h5>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/burgers/Spicy Jalapeño Jack Burger.png" class="card-img-top"
+                            alt="Spicy Jalapeño Jack Burger">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Spicy Jalapeño Jack Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Spice up your day with our Jalapeño Jack Burger! A fiery kick of jalapeños melted
+                                    into
+                                    pepper jack cheese, atop a juicy beef patty with your favorite fixings!
+                                </p>
+                            </div>
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: <del>$8.50</del> $7.50</h5>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!--End of new dishes-->
+
+    </div>
+    </section>
+
+    <!--Must try area-->
+    <section id="mustTry">
+        <div class="container mb-5">
+            <h2 class="py-5 text-center">Must Try !</h2>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm" id="try1">
+                        <img src="images/burgers/Classic Beef Burger.png" class="card-img-top"
+                            alt="Classic Beef Burger">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Classic Beef Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Our Classic Beef Burger: A juicy, perfectly grilled beef patty served on a soft
+                                    bun
+                                    with your choice of fresh lettuce, tomato, onion, and pickles. Simple
+                                    perfection!
+                                </p>
+                            </div>
+
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: $4.00</h5>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm" id="try2">
+                        <img src="images/burgers/Cheeseburger with extra cheese.png" class="card-img-top"
+                            alt="Cheese Burger">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Classic Cheese Burger</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Can't go wrong with our Cheeseburger! A delicious beef patty topped with melted
+                                    cheddar
+                                    cheese, served with your favorite fresh toppings on a soft bun!
+                                </p>
+                            </div>
+
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: $4.99</h5>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm" id="try3">
+                        <img src="images/burgers/Spaghetti with Marinara Sauce.png" class="card-img-top"
+                            alt="SmokyBBQBaconBurger">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Spaghetti with Marinara Sauce</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    A timeless favorite! Spaghetti tossed in our rich and flavorful homemade
+                                    marinara
+                                    sauce,
+                                    made with ripe tomatoes and fragrant herbs!
+                                </p>
+                            </div>
+
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: $8.99</h5>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm" id="try4">
+                        <img src="images/spagheties/Spaghetti with Meat Sauce (Bolognese.png" class="card-img-top"
+                            alt="Spaghetti with Meat Sauce">
+                        <div class="card-body">
+                            <div class="card-tittle">
+                                <h4><b>Spaghetti with Meat Sauce</b></h4>
+                            </div>
+                            <br>
+                            <div class="card-subtitle">
+                                <p>
+                                    Hearty and satisfying! Spaghetti coated in a slow-simmered meat sauce, packed
+                                    with
+                                    ground beef, tomatoes, onions, and Italian spices!
+                                </p>
+                            </div>
+
+                            <div class="card-text">
+                                <h5 class="text-muted">Price: $9.50</h5>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Add To Cart
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!--End of must try-->
+    </section>
+
+    <footer>
+        <div class="footerContainer">
+            <h6>&copy; 2025 TN Fast Food System. All rights reserved</h6>
+            <p>1200 Bel Air Crest Road, Los Angeles, CA 90077 </p>
+
+            <!-- <i class="fab fa-facebook fa-lg"></i> -->
+
+            <a data-mdb-ripple-init class="btn" style="border: none;" href="facebook.com" title="Facebook" target="_blank" role="button"
+             ><i class="fab fa-facebook fa-xl"></i
+            ></a>
+        </div>
+    </footer>
+
+    <script>
+        function showSideBar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = 'flex';
+        }
+
+        function hideSideBar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = 'none';
+        }
+
+        function boldActive() {
+            // 1. lấy đường dẫn
+            const path = window.location.pathname;
+
+            // 2. cắt chuỗi lấy tên.html
+            const navPath = path.substring(path.lastIndexOf('/') + 1);
+
+            // 3. cắt đuôi .html
+            const ids = navPath.replace(".html", "");
+
+            // 4. Danh sách các ids hợp lệ
+            const validIDs = ["index", "menu", "cart", "account"];
+
+            // 5. Check, có thì thêm class .active
+            // khi sang tab khác thi phải đổi vè màu stock
+            if(validIDs.includes(ids)){
+
+                // 5.1 xoa class active truoc khi chuyen tab  
+                for(let i = 0; i < validIDs.length; i++){
+                    const id = validIDs[i];
+                    const getEle = document.getElementById(id);
+                    if(getEle){
+                        getEle.classList.remove("active");
+                    }
+                }
+
+                // 5.2 them class active khi hop le
+                if(validIDs.includes(ids)){
+                    const getNeedActive = document.getElementById(ids);
+                    if(getNeedActive){
+                        getNeedActive.classList.add("active");
+                    }
+                }
+            }
+        }
+
+        // goi function sau khi đã load xong html
+        document.addEventListener('DOMContentLoaded', boldActive);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!--Icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--Embed text-family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Bungee+Spice&family=Monoton&display=swap"
+        rel="stylesheet">
+
+    <!--Embed CSS-->
+    <link rel="stylesheet" href="css/stylemenu.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="sidebar">
+                <li><a onclick=hideSideBar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffe4c4"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html" id="index">Home</a></li>
+                <li><a href="menu.html" id="menu">Menu</a></li>
+                <li><a href="cart.html" id="cart">Cart</a></li>
+                <li><a href="account.html" id="account">Account</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="index.html">TN Fast Food</a></li>
+                <li class="hiddenOnMobile"><a href="index.html" id="main-index">Home</a></li>
+                <li class="hiddenOnMobile"><a href="menu.html" id="main-menu">Menu</a></li>
+                <li class="hiddenOnMobile"><a href="cart.html" id="main-cart">Cart</a></li>
+                <li class="hiddenOnMobile"><a href="account.html" id="main-account">Account</a></li>
+                <li><a onclick=showSideBar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffe4c4"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+
+    <footer>
+        <div class="footerContainer">
+            <h6>&copy; 2025 TN Fast Food System. All rights reserved</h6>
+            <p>1200 Bel Air Crest Road, Los Angeles, CA 90077 </p>
+
+            <!-- <i class="fab fa-facebook fa-lg"></i> -->
+
+            <a data-mdb-ripple-init class="btn" style="border: none;" href="facebook.com" title="Facebook" target="_blank" role="button"
+             ><i class="fab fa-facebook fa-xl"></i
+            ></a>
+        </div>
+    </footer>
+
+    <script>
+        function showSideBar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = 'flex';
+        }
+
+        function hideSideBar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = 'none';
+        }
+
+        function boldActive() {
+            // 1. lấy đường dẫn
+            const path = window.location.pathname;
+
+            // 2. cắt chuỗi lấy tên.html
+            const navPath = path.substring(path.lastIndexOf('/') + 1);
+
+            // 3. cắt đuôi .html
+            const ids = navPath.replace(".html", "");
+
+            // 4. Danh sách các ids hợp lệ
+            const validIDs = ["index", "menu", "cart", "account"];
+
+            // 5. Check, có thì thêm class .active
+            // khi sang tab khác thi phải đổi vè màu stock
+            if(validIDs.includes(ids)){
+
+                // 5.1 xoa class active truoc khi chuyen tab  
+                for(let i = 0; i < validIDs.length; i++){
+                    const id = validIDs[i];
+                    const getEle = document.getElementById(id);
+                    if(getEle){
+                        getEle.classList.remove("active");
+                    }
+                }
+
+                // 5.2 them class active khi hop le
+                if(validIDs.includes(ids)){
+                    const getNeedActive = document.getElementById(ids);
+                    if(getNeedActive){
+                        getNeedActive.classList.add("active");
+                    }
+                }
+            }
+        }
+
+        function addActive(){
+            const validIDs = ["main-index", "main-menu", "main-cart", "main-account"];
+            for(let i = 0; i < validIDs.length; i++){
+                const getEle = document.getElementById(validIDs[i]);
+                if(getEle){
+                    getEle.style.color = "#c93f3f";
+                }
+            }
+
+        }
+
+
+        // goi function sau khi đã load xong html
+        document.addEventListener('DOMContentLoaded', boldActive);
+    </script>
+</body>
+
+</html>
