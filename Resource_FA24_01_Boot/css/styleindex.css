@@ -1,0 +1,143 @@
+:root {
+    --defaultGreen: rgb(94, 182, 194);
+    --defaultBlue: rgb(197, 222, 228);
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+/* logo */
+.h-logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+        max-width: 100%;
+        width: 120px;
+        height: 130px;
+        padding: 3px;
+    }
+}
+
+/* navbar*/
+.lemenu {
+    display: flex;
+    justify-content: center;
+}
+
+/*left*/
+.box {
+    border: 2px solid rgb(197, 222, 228);
+    padding-bottom: 20px;
+
+    img {
+        max-width: 100%;
+        width: 8%;
+        margin-right: 12px;
+    }
+
+    h4 {
+        background-color: var(--defaultBlue);
+        color: rgb(103, 157, 189);
+        margin-top: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+    }
+
+    p {
+        margin-left: 10px;
+    }
+}
+
+/*right tittle*/
+.right-tittle {
+    text-align: center;
+    color: rgb(94, 182, 194);
+    margin-bottom: 30px;
+}
+
+/*winter*/
+.right-winter {
+    text-align: center;
+}
+.right-winter img {
+    border-radius: 50%;
+}
+
+/*best seller*/
+.right-seller {
+    width: 100%;
+    display: flex; /* Kích hoạt Flexbox */
+    flex-wrap: wrap; /* Cho phép các box xuống dòng khi không đủ chỗ */
+}
+
+.right-seller .col-sm-12.col-md-4 {
+    display: flex; /* Áp dụng flex cho từng cột để căn chỉnh nội dung bên trong */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+}
+
+.seller-box {
+    border: 1px solid gray;
+    height: 100%; /* Chiều cao sẽ được điều chỉnh bởi flex container */
+    margin-bottom: 20px;
+    display: flex; /* Áp dụng flex cho seller-box */
+    flex-direction: column; /* Sắp xếp nội dung bên trong theo chiều dọc */
+}
+
+.seller-content {
+    padding: 10px;
+    display: flex;
+    font-size: 1.15em;
+    flex-direction: column;
+    justify-content: space-between; /* Đẩy phần tử cuối xuống dưới */
+    flex-grow: 1; /* Cho phép seller-content chiếm phần không gian còn lại */
+    
+    h4 {
+        color: orange;
+    }
+}
+
+
+.bookBtn {
+    background-color: rgb(59, 176, 230);
+    text-align: center;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 6px;
+    margin-left: 50%;
+}
+
+/* suggest */
+.right-suggest .col-sm-12.col-md-3{
+    text-align: center;
+    color: orange;
+    img {
+        width: 100%;
+    }
+}
+
+/*footer*/
+.footer {
+    text-align: center;
+    background-color: green;
+    color: white;
+    margin: 0;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .h-logo img {
+        width: 130px;
+        height: 110px;
+    }
+
+    .lemenu {
+        justify-content: flex-end;
+    }
+}
