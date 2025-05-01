@@ -202,6 +202,102 @@ function displayProductsToTable() {
     document.getElementById('cart-items').innerHTML = productData; // gán nội dung của thẻ tbody
 }
 
+function goToBillPage() {
+    const billTimeElement = document.getElementById('bill-time');
+    const storeLocationElement = document.getElementById('bill-location');
+    const billIdElement = document.getElementById('bill-id');
+    const billBodyElement = document.getElementById('cart-items');
+    const totalMoneyElement = document.getElementById('total-money');
+
+    // Lấy thông tin giỏ hàng từ localStorage
+    const storedCart = localStorage.getItem('cart');
+    const productInCart = storedCart ? JSON.parse(storedCart) : [];
+
+    // Tạo phần body hóa đơn
+    let billItemsHTML = '';
+    productInCart.forEach(item => {
+        const totalItemPrice = parseFloat(item.newPrice.replace('$', '')) * item.quantity;
+        billItemsHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.newPrice}</td>
+                <td><span class="mx-2">${item.quantity}</span></td>
+            </tr>
+        `;
+    });
+    localStorage.setItem('billItemsHTML', billItemsHTML); // Lưu HTML cho body hóa đơn
+
+    // Tạo Bill ID ngẫu nhiên
+    const billIdLength = 12;
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let billId = '';
+    for (let i = 0; i < billIdLength; i++) {
+        billId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    localStorage.setItem('billId', billId); // Lưu Bill ID
+
+    // Lấy giờ phút hiện tại
+    const now = new Date();
+    const currentHour = now.getHours().toString().padStart(2, '0');
+    const currentMinute = now.getMinutes().toString().padStart(2, '0');
+    const currentTime = `${currentHour}:${currentMinute}`;
+    localStorage.setItem('billTime', currentTime); // Lưu thời gian
+
+    // Tạo địa điểm ngẫu nhiên ở Mỹ
+    const usLocations = [ /* ... danh sách địa điểm ... */];
+    const randomLocation = usLocations[Math.floor(Math.random() * usLocations.length)];
+    localStorage.setItem('billLocation', randomLocation); // Lưu địa điểm
+
+    // Tính tổng tiền
+    let totalMoney = 0;
+    productInCart.forEach(item => {
+        totalMoney += parseFloat(item.newPrice.replace('$', '')) * item.quantity;
+    });
+    localStorage.setItem('billTotal', totalMoney.toFixed(2)); // Lưu tổng tiền
+
+    // Chuyển đến trang bill.html
+    window.location.href = 'bill.html';
+}
+
+function displayBillOnBillPage() {
+    const billTimeElement = document.getElementById('bill-time');
+    const storeLocationElement = document.getElementById('bill-location');
+    const billIdElement = document.getElementById('bill-id');
+    const billBodyElement = document.getElementById('cart-items');
+    const totalMoneyElement = document.getElementById('total-money');
+
+    // Lấy dữ liệu đã lưu từ localStorage
+    const billItemsHTML = localStorage.getItem('billItemsHTML');
+    const billId = localStorage.getItem('billId');
+    const billTime = localStorage.getItem('billTime');
+    const billLocation = localStorage.getItem('billLocation');
+    const billTotal = localStorage.getItem('billTotal');
+
+    // Hiển thị dữ liệu lên trang bill.html
+    if (billBodyElement) {
+        billBodyElement.innerHTML = billItemsHTML;
+    }
+    if (billIdElement) {
+        billIdElement.textContent = `Bill ID: ${billId}`;
+    }
+    if (billTimeElement) {
+        billTimeElement.textContent = `Time: ${billTime}`;
+    }
+    if (storeLocationElement) {
+        storeLocationElement.textContent = `Location: ${billLocation}`;
+    }
+    if (totalMoneyElement) {
+        totalMoneyElement.textContent = billTotal;
+    }
+
+    // (Tùy chọn) Xóa dữ liệu đã lưu khỏi localStorage sau khi hiển thị
+    // localStorage.removeItem('billItemsHTML');
+    // localStorage.removeItem('billId');
+    // localStorage.removeItem('billTime');
+    // localStorage.removeItem('billLocation');
+    // localStorage.removeItem('billTotal');
+}
+
 
 function editQuantity(index, action) {
     if (action === 'increase') {
@@ -235,6 +331,8 @@ function calculateTotalInCart() {
     }
     document.getElementById('total-money').innerHTML = `$${totalMoney.toFixed(2)}`; // gán nội dung của thẻ có id là total-money và thêm ký tự đô la
 }
+
+
 //================================= HÀM LOAD TRANG ===============================//
 
 // Gọi hàm displayProducts để hiển thị sản phẩm khi trang tải
@@ -253,10 +351,16 @@ document.addEventListener('DOMContentLoaded', function () {
         displayProductsToTable(); // Gọi hàm này để hiển thị sản phẩm trong giỏ hàng
         calculateTotal(); // Tính tổng số sản phẩm trong giỏ hàng
         calculateTotalInCart(); // Tính tổng tiền trong giỏ hàng
-    }else if (window.location.pathname.includes("news.html")) {
+        const checkoutButton = document.getElementById('checkout-button');
+        if (checkoutButton) {
+            checkoutButton.onclick = goToBillPage;
+        }
+    } else if (window.location.pathname.includes("news.html")) {
         // Trang Tin tức
-         // Giả sử bạn có hàm này cho trang Tin tức
+        // Giả sử bạn có hàm này cho trang Tin tức
         calculateTotal(); // Có thể vẫn cần nếu giỏ hàng hiển thị ở cả 2 trang
+    } else if (window.location.pathname.includes("bill.html")) {
+        displayBillOnBillPage(); // Gọi hàm này khi trang bill.html tải
     }
 });
 
