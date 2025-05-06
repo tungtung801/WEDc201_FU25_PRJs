@@ -95,6 +95,19 @@ const newProducts = [
     }
 ]
 
+const accounts = [
+    {
+        username: "admin",
+        password: "admin",
+        role: "admin"
+    },
+    {
+        username: "user",
+        password: "user",
+        role: "user"
+    }
+];
+
 function displayProducts(arrayX, containerID) {
     let productData = "";
     arrayX.map(value => { // Sửa lỗi: '==' thay vì '=>' trong arrow function
@@ -193,7 +206,7 @@ function displayProductsToTable() {
                 <td>
                     $${(parseFloat(value.newPrice.replace('$', '')) * value.quantity).toFixed(2)}
                 <td>
-                    <button onclick = 'removeFromCart(${index})' class="btn btn-danger btn-sm remove-from-cart" data-id="${value.id}">X</button>
+                    <button onclick = 'removeFromCart(${index})' class="btn btn-danger btn-sm remove-from-cart" data-id="${value.id}">Delete</button>
                 </td>
             </tr>
         `;
@@ -244,7 +257,20 @@ function goToBillPage() {
     localStorage.setItem('billTime', currentTime); // Lưu thời gian
 
     // Tạo địa điểm ngẫu nhiên ở Mỹ
-    const usLocations = [ /* ... danh sách địa điểm ... */];
+    const usLocations = [
+        "456 Oak Avenue, Pleasantville, CA, USA",
+        "789 Maple Street, Springfield, IL, USA",
+        "321 Birch Lane, Hilltop, TX, USA",
+        "654 Cedar Drive, Rivertown, NY, USA",
+        "987 Elm Street, Lakeview, FL, USA",
+        "123 Pine Road, Mountainview, CO, USA",
+        "234 Spruce Way, Forest City, WA, USA",
+        "567 Willow Boulevard, Sunnydale, AZ, USA",
+        "890 Fir Court, Oceanview, OR, USA",
+        "345 Chestnut Street, Riverdale, NJ, USA",
+
+        // ... thêm các địa điểm khác nếu cần
+    ];
     const randomLocation = usLocations[Math.floor(Math.random() * usLocations.length)];
     localStorage.setItem('billLocation', randomLocation); // Lưu địa điểm
 
@@ -281,10 +307,10 @@ function displayBillOnBillPage() {
         billIdElement.textContent = `Bill ID: ${billId}`;
     }
     if (billTimeElement) {
-        billTimeElement.textContent = `Time: ${billTime}`;
+        billTimeElement.textContent = `${billTime}`;
     }
     if (storeLocationElement) {
-        storeLocationElement.textContent = `Location: ${billLocation}`;
+        storeLocationElement.textContent = ` ${billLocation}`;
     }
     if (totalMoneyElement) {
         totalMoneyElement.textContent = billTotal;
@@ -332,6 +358,44 @@ function calculateTotalInCart() {
     document.getElementById('total-money').innerHTML = `$${totalMoney.toFixed(2)}`; // gán nội dung của thẻ có id là total-money và thêm ký tự đô la
 }
 
+function handleLogin(username, password) {
+    const account = accounts.find(
+      (acc) => acc.username === username && acc.password === password
+    );
+
+    if (account) {
+      if (account.role === "admin") {
+        window.location.href = "admin-dashboard.html";
+        alert("Login successfully as admin!");
+      } else if (account.role === "user") {
+        window.location.href = "index.html"; // Chuyển đến trang chính
+        alert("Login successfully !");
+      }
+    } else {
+      // Xử lý trường hợp đăng nhập thất bại
+      console.log("Đăng nhập thất bại. Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.");
+      // Ở đây nhỏ có thể hiển thị thông báo lỗi cho người dùng trên giao diện.
+    }
+  }
+
+  // Giả sử nhỏ có input field cho username và password với id tương ứng
+  const loginForm = document.getElementById("login-form"); // ID của form đăng nhập
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const loginButton = document.getElementById("loginButton"); // ID của nút đăng nhập
+
+  if (loginForm && usernameInput && passwordInput && loginButton) {
+    loginButton.addEventListener("click", function(event) {
+      event.preventDefault(); // Ngăn chặn hành động submit mặc định của form (nếu có)
+      const enteredUsername = usernameInput.value;
+      const enteredPassword = passwordInput.value;
+      handleLogin(enteredUsername, enteredPassword);
+    });
+  } else {
+    console.error("Không tìm thấy form hoặc các input cần thiết.");
+  }
+
+
 
 //================================= HÀM LOAD TRANG ===============================//
 
@@ -361,6 +425,14 @@ document.addEventListener('DOMContentLoaded', function () {
         calculateTotal(); // Có thể vẫn cần nếu giỏ hàng hiển thị ở cả 2 trang
     } else if (window.location.pathname.includes("bill.html")) {
         displayBillOnBillPage(); // Gọi hàm này khi trang bill.html tải
+    } else if (window.location.pathname.includes("admin-dashboard.html")) {
+        // tương lai sẽ load hàm thêm tin tức mới vào đây
+    } else if (window.location.pathname.includes("account.html")) {
+        // Trang Đăng nhập
+        handleLogin(); // Gọi hàm này khi trang login.html tải
+        // Không cần làm gì đặc biệt ở đây, chỉ cần đảm bảo rằng các trường input đã được định nghĩa trong HTML
+    } else {
+        console.error("Trang không xác định hoặc không có chức năng tương ứng.");
     }
 });
 

@@ -1,27 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.navbar-collapse li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
 .newDishes {
     margin-top: 100px;
 }
 
-.newDishes>h1{
+.newDishes>h1 {
     font-size: 2rem;
     color: #333;
     text-align: center;
     margin-bottom: 12px;
 }
 
-.newDishes>.underline{
+.newDishes>.underline {
     width: 100px;
     height: 4px;
     background-color: #333;
     margin: 0 auto 30px auto;
-} 
-
-
-.navbar-collapse li{
-    margin: 0 20px;
 }
 
-.card{
+
+
+
+.card {
     box-shadow: 0 50px 50px #757676;
     transform: all 0.25s ease;
 }
@@ -33,12 +42,12 @@
     z-index: 10;
 }
 
-.footer-table{
+.footer-table {
     display: flex;
     justify-content: space-between;
 }
 
-.underline{
+.underline {
     width: 100%;
     height: 4px;
     background-color: #333;
@@ -50,16 +59,136 @@
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    align-items: center ;
+    align-items: center;
+}
+
+
+.login-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 350px;
+    width: 100%;
+    background-image: url(../images/news_bg/news_bg_3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 50px 50px #6a6b6b;
+    height: 550px;
+    border: 2px #333 solid;
+    border-radius: 50px 5px 50px 5px;
+    padding: 30px;
+}
+
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/news_bg/news_bg_3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px 5px 50px 5px;
+    filter: blur(10px);
+    /* Áp dụng blur chỉ cho lớp phủ này */
+    z-index: -1;
+    /* Đưa lớp phủ xuống dưới nội dung */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: #FAF0E6;
+}
+
+.login-form>h2 {
+    text-align: center;
+}
+
+
+.login-form input {
+    width: 100%;
+    height: 45px;
+    border-radius: 30px;
+    border: 2px solid #FFFF00;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.login-btn-area{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px 0;
+    padding: 0 10px;
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+    }
+
+    a:hover{
+        text-decoration: underline;
+        font-weight: bold;
+        color: #67b4d3;
+    }
+
+    button {
+        width: 50%;
+        height: 40px;
+        border-radius: 30px;
+        border: 2px solid rgb(245, 245, 245);
+        background-color: #333333;
+        color: white;
+        font-size: 1.10rem;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #222222;
+        color: white;
+    }
+}
+
+
+.register-link{
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 30px;
+    color: #fff;
+    margin: 0 10px ;
+
+    a{
+        text-decoration: none;
+        color: #67b4d3;
+        font-size: 1rem;
+        font-weight: bold;
+    }
 }
 
 footer {
     background-color: #333;
     color: white;
     padding: 20px 0;
+    margin-top: 120px;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-container {
@@ -68,7 +197,7 @@ footer {
     align-items: center;
     justify-content: center;
 
-    ul{
+    ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -79,7 +208,7 @@ footer {
         margin: 0 10px;
         color: white;
 
-        a{
+        a {
             color: white;
             text-decoration: none;
         }
