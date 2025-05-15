@@ -1,0 +1,149 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : May 15, 2025, 7:00:02 PM
+    Author     : Tung Tung
+*/
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('path/to/SFPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    /* 400 */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('path/to/SFPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('path/to/SFPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    /* 700 */
+    font-style: normal;
+}
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    /* Sử dụng font SF Pro Display cho toàn bộ trang web */
+    font-weight: normal;
+    /* Đảm bảo phần thân văn bản không bị đậm */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    /* hoặc position: fixed; */
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Màu nền trong suốt */
+    z-index: 100;
+    /* Đảm bảo header ở trên cùng */
+    width: 100%;
+    /* Đảm bảo header có chiều rộng đầy đủ */
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list .nav-item {
+    list-style: none;
+    padding: 0 20px;
+
+}
+
+.nav-list .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 0.80rem;
+}
+
+.apple-logo {
+    font-size: 1.5rem;
+}
+
+.banner {
+    position: relative;
+}
+
+.btn-overlay {
+    display: flex;
+    justify-content: center;
+}
+
+.appleTV-banner-btn {
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.1rem;
+        font-family: 'SF Pro Display';
+    }
+
+    padding: 12px 22px;
+    background-color: #0077ed;
+    border: none;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 130px;
+}
+
+.iphoneBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+
+    h1 {
+        font-size: 3.2rem;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-top: 8px;
+        font-weight: 400;
+    }
+}
+
+.iphoneBanner img {
+    width: 100%;
+}
+
+.iphone-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    button {
+        a {
+            text-decoration: none;
+            color: #0077ed;
+            font-family: 'SF Pro Display';
+            font-weight: 400;
+        }
+
+        font-size: 1.1rem;    
+        padding: 12px 22px;
+        background-color: white;
+        border: none;
+    }
+
+}
