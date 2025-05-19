@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 @font-face {
     font-family: 'SF Pro Display';
     src: url('path/to/SFPro-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 400;
     /* 400 */
     font-style: normal;
 }
@@ -17,23 +17,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 @font-face {
     font-family: 'SF Pro Display';
     src: url('path/to/SFPro-Medium.ttf') format('truetype');
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SF Pro Display';
     src: url('path/to/SFPro-Bold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: 400;
     /* 700 */
     font-style: normal;
 }
 
 body {
     font-family: 'SF Pro Display', sans-serif;
-    /* Sử dụng font SF Pro Display cho toàn bộ trang web */
-    font-weight: normal;
-    /* Đảm bảo phần thân văn bản không bị đậm */
+    font-weight: 400;
 }
 
 
@@ -44,14 +42,10 @@ body {
 
 header {
     position: sticky;
-    /* hoặc position: fixed; */
     top: 0;
     background-color: rgba(0, 0, 0, 0.85);
-    /* Màu nền trong suốt */
     z-index: 100;
-    /* Đảm bảo header ở trên cùng */
     width: 100%;
-    /* Đảm bảo header có chiều rộng đầy đủ */
     padding: 10px 0;
 }
 
@@ -80,6 +74,12 @@ header {
 
 .banner {
     position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 }
 
 .btn-overlay {
@@ -122,8 +122,20 @@ header {
     }
 }
 
-.iphoneBanner img {
+.iphone13pro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
     width: 100%;
+    max-width: 100%;
+}
+
+.iphone13pro img {
+    width: 130%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 30px;
 }
 
 .iphone-btn {
@@ -140,10 +152,89 @@ header {
             font-weight: 400;
         }
 
-        font-size: 1.1rem;    
+        font-size: 1.1rem;
         padding: 12px 22px;
         background-color: white;
         border: none;
     }
+}
 
+.second-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.second-row .iphone13 {
+    display: flex;
+    flex: 2;
+
+}
+
+.iphone13-left {
+    flex: 1;
+    display: flex;
+
+    img {
+        width: 100%;
+    }
+}
+
+.iphone13-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-top: 8px;
+        font-weight: 400;
+    }
+
+}
+
+.second-row .airpod {
+    display: flex;
+    flex: 2;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .airpod-btn {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: rgba(0, 0, 0, 0.05); */
+        width: 100%;
+        
+        
+        .airpod-btn-btn {
+            border: 2px solid rgb(245, 245, 245);
+            border-radius: 50px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-family: 'SF Pro Display';
+            font-weight: 400;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            margin: 0 15px;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+    }
 }

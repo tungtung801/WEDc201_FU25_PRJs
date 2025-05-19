@@ -7,7 +7,11 @@
   <title>Apple Clone</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
+
+<body>
 <header>
   <div class="navbar">
     <ul class="nav-list">
@@ -16,61 +20,17 @@
           <span class="apple-logo">&#xf8ff;</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Mac
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          iPad
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          iPhone
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Watch
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          AirPods
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          TV & Home
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Entertainment
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Accessories
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          Support
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-search"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">
-          <i class="fas fa-shopping-bag"></i>
-        </a>
-      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Mac</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">iPad</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">iPhone</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Watch</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">AirPods</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">TV & Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Entertainment</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+      <li class="nav-item"><a class="nav-link"><i class="fas fa-search"></i></a></li>
+      <li class="nav-item"><a class="nav-link"><i class="fas fa-shopping-bag"></i></a></li>
     </ul>
   </div>
 </header>
@@ -78,7 +38,6 @@
 <main>
   <div class="banner">
     <img src="https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2024/02/apple-immersive-adventure-vr180-1.jpg">
-
     <div class="btn-overlay">
       <button type="button" class="appleTV-banner-btn">
         <a href="#">Learn more</a>
@@ -97,16 +56,205 @@
         <a href="#">Buy ></a>
       </button>
     </div>
-
     <div class="iphone13pro">
       <a href="#">
-        <img src="https://www.businessmobiles.com/wp-content/uploads/2022/12/iPhone13Pro-1.jpg" alt="iPhone 13 Pro" />
+        <img src="https://i.blogs.es/42551d/iphone-13-real-6/650_1200.jpg" alt="iPhone 13 Pro" />
       </a>
+    </div>
+  </div>
 
+  <div class="second-row">
+    <div class="iphone13">
+      <a class="iphone13-left" href="#">
+        <img src="https://img-prd-pim.poorvika.com/product/apple-iphone-13-pink-256-front-back.png" alt="iPhone 13" />
+      </a>
+      <div class="iphone13-right">
+        <h1>iPhone 13</h1>
+        <h3>Your new superpower</h3>
+        <div class="iphone-btn">
+          <button type="button" class="iphone-banner-btn">
+            <a href="#">Learn more ></a>
+          </button>
+          <button type="button" class="iphone-banner-btn">
+            <a href="#">Buy ></a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="airpod">
+      <a href="#">
+        <img src="https://bhatnaturally.com/wp-content/uploads/2023/03/AirPods-Pro.jpeg" alt="AirPods 3rd Gen" />
+        <div class="airpod-btn">
+          <a class="airpod-btn-btn" href="#">Learn more</a>
+          <a class="airpod-btn-btn" href="#">Buy</a>
+        </div>
+      </a>
     </div>
   </div>
 </main>
 
-</body>
+<script>
+  // Header animation
+  gsap.from("header", {
+    duration: 1,
+    y: -100,
+    opacity: 0,
+    ease: "power2.out"
+  });
 
+  // Banner image and button overlay animations
+  gsap.from(".banner img", {
+    duration: 1.5,
+    scale: 1.1,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.5
+  });
+
+  gsap.from(".btn-overlay", {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 1
+  });
+
+  // iPhone Banner text animation
+  gsap.from(".iphoneBanner h1", {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 1.5
+  });
+
+  gsap.from(".iphoneBanner h3", {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 2
+  });
+
+
+  // Scroll trigger for iPhone 13 and AirPod sections with additional animations
+
+  // Timeline for iPhone 13 row
+  let iphone13Timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".second-row",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  // Animate left image sliding right and fading in
+  iphone13Timeline.from(".iphone13-left img", {
+    x: -150,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  // Animate right content sliding left and fading in slightly delayed
+  iphone13Timeline.from(".iphone13-right", {
+    x: 150,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  }, "-=0.7");
+
+  // Animate the buttons inside iphone13-right with stagger
+  iphone13Timeline.from(".iphone13-right .iphone-btn button", {
+    scale: 0,
+    opacity: 0,
+    duration: 0.5,
+    ease: "back.out(1.7)",
+    stagger: 0.2
+  }, "-=0.3");
+
+
+  // Timeline for AirPod section
+  let airpodTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".airpod",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  // Image scaling and fade in
+  airpodTimeline.from(".airpod img", {
+    scale: 0.8,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  // Animate AirPod buttons fade and slide up with stagger
+  airpodTimeline.from(".airpod-btn-btn", {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    stagger: 0.25
+  }, "-=0.5");
+
+
+  // Floating subtle animation on AirPod image to add life
+  gsap.to(".airpod img", {
+    y: "+=10",
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    duration: 3
+  });
+
+  // Floating subtle animation on the iPhone 13 Pro image
+  gsap.to(".iphone13pro img", {
+    y: "-=10",
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    duration: 3
+  });
+
+  // Hover scale effect on iPhone13-left image
+  const iphone13LeftImg = document.querySelector(".iphone13-left img");
+  iphone13LeftImg.addEventListener("mouseenter", () => {
+    gsap.to(iphone13LeftImg, {
+      scale: 1.1,
+      duration: 0.3,
+      ease: "power3.out"
+    });
+  });
+  iphone13LeftImg.addEventListener("mouseleave", () => {
+    gsap.to(iphone13LeftImg, {
+      scale: 1,
+      duration: 0.3,
+      ease: "power3.out"
+    });
+  });
+
+  // Hover scale effect on AirPod image
+  const airpodImg = document.querySelector(".airpod img");
+  airpodImg.addEventListener("mouseenter", () => {
+    gsap.to(airpodImg, {
+      scale: 1.1,
+      duration: 0.3,
+      ease: "power3.out"
+    });
+  });
+  airpodImg.addEventListener("mouseleave", () => {
+    gsap.to(airpodImg, {
+      scale: 1,
+      duration: 0.3,
+      ease: "power3.out"
+    });
+  });
+</script>
+
+
+</body>
 </html>
